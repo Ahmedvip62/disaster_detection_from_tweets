@@ -1,6 +1,11 @@
 import pandas as pd
 import numpy as np
 import nltk
+import os
+
+# تحديد المسار المحلي لحزم nltk
+nltk.data.path.append(os.path.join(os.environ['USERPROFILE'], 'AppData', 'Roaming', 'nltk_data'))
+
 
 # تحميل البيانات إذا كانت غير موجودة
 nltk.download('punkt', download_dir=r"C:\Users\musta\AppData\Roaming\nltk_data")
