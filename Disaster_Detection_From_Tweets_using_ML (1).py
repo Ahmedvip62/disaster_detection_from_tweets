@@ -2,6 +2,12 @@ import pandas as pd
 import numpy as np
 import nltk
 import os
+from pathlib import Path
+
+# تحديد المسار المحلي للنظام الحالي (Windows أو Linux أو Mac)
+nltk_data_path = os.path.join(str(Path.home()), 'nltk_data')
+nltk.data.path.append(nltk_data_path)
+
 
 # تحديد المسار المحلي لحزم nltk
 nltk.data.path.append(os.path.join(os.environ['USERPROFILE'], 'AppData', 'Roaming', 'nltk_data'))
