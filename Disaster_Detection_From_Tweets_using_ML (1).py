@@ -9,8 +9,11 @@ nltk_data_path = os.path.join(str(Path.home()), 'nltk_data')
 nltk.data.path.append(nltk_data_path)
 
 
-# تحديد المسار المحلي لحزم nltk
-nltk.data.path.append(os.path.join(os.environ['USERPROFILE'], 'AppData', 'Roaming', 'nltk_data'))
+
+# المسار العام المتوافق مع جميع أنظمة التشغيل
+nltk_data_path = str(Path.home() / 'nltk_data')
+nltk.data.path.append(nltk_data_path)
+
 
 
 # تحميل البيانات إذا كانت غير موجودة
