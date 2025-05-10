@@ -4,15 +4,23 @@ import nltk
 import os
 from pathlib import Path
 
-# تحديد المسار المحلي للنظام الحالي (Windows أو Linux أو Mac)
-nltk_data_path = os.path.join(str(Path.home()), 'nltk_data')
-nltk.data.path.append(nltk_data_path)
+
+# تحديد مسار تنزيل الحزم
+nltk_data_path = Path.home() / 'nltk_data'
+nltk.data.path.append(str(nltk_data_path))
+
+# تحميل الحزم المطلوبة عند الحاجة
+required_packages = ['punkt', 'stopwords', 'wordnet', 'omw-1.4']
+for pkg in required_packages:
+    try:
+        nltk.data.find(f"corpora/{pkg}")
+    except LookupError:
+        nltk.download(pkg, download_dir=str(nltk_data_path))
+from nltk.corpus import stopwords
+stop = set(stopwords.words('english'))
 
 
 
-# المسار العام المتوافق مع جميع أنظمة التشغيل
-nltk_data_path = str(Path.home() / 'nltk_data')
-nltk.data.path.append(nltk_data_path)
 
 
 
