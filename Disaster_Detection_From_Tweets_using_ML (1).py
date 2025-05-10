@@ -1,6 +1,13 @@
 import pandas as pd
 import numpy as np
 import nltk
+if __name__ == "__main__":
+    import nltk
+    nltk.download('stopwords')
+    nltk.download('punkt')
+    nltk.download('wordnet')
+    nltk.download('omw-1.4')
+
 import re
 import string
 from string import punctuation
@@ -12,6 +19,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import PassiveAggressiveClassifier
 import streamlit as st
 from wordcloud import WordCloud
+
 
 # تحميل البيانات
 df = pd.read_csv('disaster_tweets.csv')
