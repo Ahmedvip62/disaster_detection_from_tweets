@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
 import nltk
-if __name__ == "__main__":
-    import nltk
-    nltk.download('stopwords')
-    nltk.download('punkt')
-    nltk.download('wordnet')
-    nltk.download('omw-1.4')
+import nltk
+nltk.download('punkt')  # لتحميل tokenizer الخاص بـ punkt
+nltk.download('stopwords')  # لتحميل قائمة stopwords
+nltk.download('wordnet')  # لتحميل wordnet lemmatizer
+nltk.download('omw-1.4')  # لتحميل بعض البيانات المتعلقة بالـ wordnet
+
 
 import re
 import string
