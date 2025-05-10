@@ -1,11 +1,27 @@
 import pandas as pd
 import numpy as np
 import nltk
-import nltk
-nltk.download('punkt')  # لتحميل tokenizer الخاص بـ punkt
-nltk.download('stopwords')  # لتحميل قائمة stopwords
-nltk.download('wordnet')  # لتحميل wordnet lemmatizer
-nltk.download('omw-1.4')  # لتحميل بعض البيانات المتعلقة بالـ wordnet
+
+# إضافة المسار المحلي لبيانات NLTK
+nltk.data.path.append(r"C:\Users\musta\AppData\Roaming\nltk_data")
+
+# تحميل البيانات إذا كانت غير موجودة
+nltk.download('punkt', download_dir=r"C:\Users\musta\AppData\Roaming\nltk_data")
+nltk.download('stopwords', download_dir=r"C:\Users\musta\AppData\Roaming\nltk_data")
+
+# استخدام البيانات المحملة
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+
+# نص لاختباره
+text = "Hello, how are you doing today?"
+
+# تنظيف النص
+stop = set(stopwords.words('english'))
+words = word_tokenize(text)
+filtered_words = [word for word in words if word.lower() not in stop]
+
+print(filtered_words)
 
 
 import re
