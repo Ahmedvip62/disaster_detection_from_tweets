@@ -12,7 +12,7 @@ import nltk, re, string
 from string import punctuation
 from nltk.corpus import stopwords
 import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
+
 from sklearn.metrics import  accuracy_score, f1_score, precision_score,confusion_matrix, recall_score, roc_auc_score
 
 from sklearn.feature_extraction.text import TfidfVectorizer
